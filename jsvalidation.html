@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login Form</title>
+</head>
+<body>
+  Email: <input type="text" id="email">
+  <br>
+  Password: <input type="password" id="pzassword">
+  <br>
+  <input type="button" value="Submit" onclick="validate()">
+  
+
+  <script>
+    function validate()
+    {
+      let email = document.getElementById("email");
+      let password = document.getElementById("password");
+      let eregex = /[a-zA-Z0-9-!@#$%^&*().,_+{}:">?<]{3,30}@[a-zA-z0-9]{3,10}.[a-zA-Z0-9]{1,10}.?[a-zA-Z0-9]{1,5}/
+      let pregex = /[a-z0-9A-Z!@#$%^&*()]{6,30}/
+      if(!email.value || !password.value)
+      {
+        alert("please fill out the complete form! ");
+      }
+      else
+      {
+        if (eregex.test(email.value) && pregex.test(password.value))
+        {
+          alert("Correct!Form submittted!");
+        }
+        else
+        {
+          alert("invalid. Not able to submit this form! ");
+        }
+      }
+    }
+  </script>
+</body>
+</html>
